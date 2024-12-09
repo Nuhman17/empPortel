@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
+  <div class="w-70 border shadow  p-2 row rounded">
+    <div class="col d-flex justify-content-center align-items-center">
+      <img
+        src="https://img.freepik.com/free-vector/matchmaking-website-idea-social-network-geolocation-search-user-account-personal-profile-internet-surfing-online-dating-service-vector-isolated-concept-metaphor-illustration_335657-2215.jpg?t=st=1731651550~exp=1731655150~hmac=5566e615a38b11d56bd223c7ed45367c2aa66b24b4e3a190b192a7f120d47caa&w=740"
+        class="" width="90%" alt="">
+    </div>
+    <div class="col d-flex justify-content-center px-3   flex-column">
+      <h2 class="text-center mb-3">User SignIN</h2>
+      <form action="" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" name="emailid" #email="ngModel" [(ngModel)]="formData.email" required
+            id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Email address</label>
+          <div *ngIf="email.invalid && email.touched" class="text-danger">*Invalid Email</div>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" name="psswd" #password="ngModel" [(ngModel)]="formData.password" required
+            id="floatingInput" placeholder="Enter Password">
+          <label for="floatingInput">Enter Password</label>
+          <div *ngIf="password.invalid && password.touched" class="text-danger">*Invalid Password</div>
+        </div>
+
+
+        <div>
+          <button class="btn btn-success" [disabled]="loginForm.invalid" type="submit">SignIn</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
